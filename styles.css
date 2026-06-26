@@ -100,21 +100,34 @@ ol {
   padding: 0.65rem 1rem;
 }
 
-.brand {
-  display: inline-flex;
+.site-logo {
+  display: flex;
   align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
   color: var(--color-primary);
+  overflow: visible;
   text-decoration: none;
 }
 
-.brand:hover {
+.site-logo:hover {
   text-decoration: none;
 }
 
-.brand-logo {
+.site-logo-icon {
   display: block;
-  width: min(214px, 64vw);
-  height: auto;
+  flex: 0 0 auto;
+  width: auto;
+  height: 40px;
+}
+
+.site-logo-text {
+  color: var(--color-primary);
+  font-size: clamp(1.35rem, 7vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -512,8 +525,12 @@ ol {
     justify-content: space-between;
   }
 
-  .brand-logo {
-    width: 238px;
+  .site-logo-icon {
+    height: 42px;
+  }
+
+  .site-logo-text {
+    font-size: 1.8rem;
   }
 
   .button-row {
