@@ -103,10 +103,8 @@ ol {
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.9rem;
   min-width: 0;
-  color: var(--color-primary);
-  overflow: visible;
   text-decoration: none;
 }
 
@@ -115,28 +113,35 @@ ol {
 }
 
 .site-logo-icon {
+  color: #2f7e89;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .site-logo-icon svg {
+  width: 52px;
+  height: 52px;
   display: block;
-  width: 48px;
-  height: 48px;
 }
 
 .site-logo-text {
-  color: #20343a;
-  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
   font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
   line-height: 1;
-  overflow: visible;
   white-space: nowrap;
+}
+
+.site-logo .site-logo-main {
+  color: #20343a;
+}
+
+.site-logo .site-logo-accent {
+  color: #2f7e89;
 }
 
 .site-nav {
@@ -532,10 +537,6 @@ ol {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .site-logo-text {
-    font-size: clamp(1.8rem, 4vw, 2.25rem);
   }
 
   .button-row {
