@@ -130,6 +130,10 @@ ol {
   white-space: nowrap;
 }
 
+.site-logo-accent {
+  color: var(--color-accent);
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
