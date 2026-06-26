@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" role="img" aria-labelledby="title">
+  <title id="title">ServiceSide Sites</title>
+  <rect width="760" height="160" fill="#F7FAFA"/>
+  <g transform="translate(18 40)" fill="none" stroke="#2F7E89" stroke-width="8" stroke-linejoin="round">
+    <rect x="0" y="0" width="104" height="80" rx="6"/>
+    <path d="M0 22h104"/>
+    <circle cx="15" cy="11" r="3.5" fill="#2F7E89" stroke="none"/>
+    <circle cx="30" cy="11" r="3.5" fill="#2F7E89" stroke="none"/>
+    <circle cx="45" cy="11" r="3.5" fill="#2F7E89" stroke="none"/>
+    <path d="M42 34v48l15-16 11 25c1.5 3.5 5.5 5 9 3.5s5-5.5 3.5-9L69 61h24L42 34z" fill="#2F7E89" stroke="none"/>
+  </g>
+  <text x="150" y="105" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="800" letter-spacing="0">
+    <tspan fill="#20343A">ServiceSide </tspan><tspan fill="#2F7E89">Sites</tspan>
+  </text>
+</svg>
