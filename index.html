@@ -13,14 +13,59 @@
   <body>
     <header class="site-header">
       <div class="header-inner">
+        <!--
+          Header icon concepts, all using currentColor so the accent can be changed in CSS.
+
+          Option 1: Browser window with cursor.
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="8" width="34" height="28" rx="5" stroke="currentColor" stroke-width="3"/>
+            <path d="M5 17h34M13 26h12M13 31h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M29 24v17l4-4 3 6 4-2-3-6h6L29 24z" fill="currentColor"/>
+          </svg>
+
+          Option 2: Browser window with a clear click/selection point. Recommended.
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="9" width="36" height="28" rx="5" stroke="currentColor" stroke-width="3"/>
+            <path d="M6 18h36M14 27h11" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M30 26l8 8-5 1 2 5-4 1.8-2-5-3.4 3.4L30 26z" fill="currentColor"/>
+            <path d="M34 23h6M37 20v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+
+          Option 3: Layered website window with simple cursor.
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 10h25a5 5 0 0 1 5 5v18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <rect x="6" y="15" width="32" height="25" rx="5" stroke="currentColor" stroke-width="3"/>
+            <path d="M6 24h32M15 32h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M29 29v12l3-3 2 4 3-1.5-2-4h5L29 29z" fill="currentColor"/>
+          </svg>
+        -->
         <a class="site-logo" href="/" aria-label="ServiceSide Sites home">
-          <img
-            class="site-logo-icon"
-            src="assets/logo-icon.svg"
-            alt=""
-            aria-hidden="true"
-          />
-          <span class="site-logo-text">ServiceSide <span class="site-logo-accent">Sites</span></span>
+          <span class="site-logo-icon" aria-hidden="true">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              focusable="false"
+            >
+              <rect x="6" y="9" width="36" height="28" rx="5" stroke="currentColor" stroke-width="3" />
+              <path
+                d="M6 18h36M14 27h11"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path d="M30 26l8 8-5 1 2 5-4 1.8-2-5-3.4 3.4L30 26z" fill="currentColor" />
+              <path
+                d="M34 23h6M37 20v6"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="site-logo-text">ServiceSide Sites</span>
         </a>
 
         <nav class="site-nav" aria-label="Main navigation">
