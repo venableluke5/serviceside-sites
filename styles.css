@@ -447,7 +447,6 @@ ol {
 }
 
 .package-card {
-  position: relative;
   min-height: 100%;
   padding: 1.35rem;
   background: var(--color-surface);
@@ -469,13 +468,20 @@ ol {
   background: #fbfdfd;
 }
 
+.package-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.95rem;
+}
+
 .package-label,
 .package-badge {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   min-height: 28px;
-  margin-bottom: 0.85rem;
   padding: 0.35rem 0.55rem;
   background: var(--color-soft-accent);
   color: var(--color-accent);
@@ -485,14 +491,18 @@ ol {
   letter-spacing: 0.07em;
   line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.package-card > .package-label {
+  margin-bottom: 0.95rem;
 }
 
 .package-badge {
-  position: absolute;
-  top: 1.35rem;
-  right: 1.35rem;
   background: var(--color-accent);
   color: var(--color-surface);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
 }
 
 .price {
@@ -501,6 +511,14 @@ ol {
   font-size: clamp(1.6rem, 4vw, 2rem);
   font-weight: 900;
   line-height: 1.1;
+}
+
+.pricing-note {
+  max-width: 760px;
+  margin: 1.3rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 /* Boundaries are intentionally near pricing so scope is visible before contact. */
@@ -719,6 +737,12 @@ ol {
 
   .package-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .package-labels {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
