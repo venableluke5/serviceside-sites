@@ -8,9 +8,16 @@
       name="description"
       content="ServiceSide Sites builds simple, trustworthy websites for local service businesses so customers can quickly understand, trust, and contact them."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Sticky header: minimal logo, desktop links, and a persistent contact CTA. -->
     <header class="site-header">
       <div class="header-inner">
         <a class="site-logo" href="/">
@@ -42,17 +49,19 @@
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#packages">Packages</a>
           <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
+          <a href="#samples">Examples</a>
         </nav>
+
+        <a class="nav-cta" href="#contact">Free preview</a>
       </div>
     </header>
 
     <main id="top">
-      <!-- Hero: the main promise and first calls to action. -->
+      <!-- Hero: dark high-contrast first impression with primary and secondary CTAs. -->
       <section class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Clear, practical websites for local service businesses</p>
+            <p class="eyebrow eyebrow-on-dark">Clear, practical websites for local service businesses</p>
             <h1>Simple websites that help local customers trust you and get in touch.</h1>
             <p class="hero-text">
               ServiceSide Sites builds straightforward, trustworthy websites for local service
@@ -61,12 +70,14 @@
             </p>
             <div class="button-row">
               <a class="button button-primary" href="#contact">Request a free website preview</a>
-              <a class="button button-secondary" href="#packages">View starter packages</a>
+              <a class="button button-secondary button-secondary-on-dark" href="#packages">
+                View starter packages
+              </a>
             </div>
           </div>
 
           <aside class="hero-panel" aria-label="Website preview summary">
-            <div class="preview-browser">
+            <div class="preview-browser" aria-hidden="true">
               <span></span>
               <span></span>
               <span></span>
@@ -84,7 +95,6 @@
         </div>
       </section>
 
-      <!-- Audience: names who this offer is built for. -->
       <section class="section">
         <div class="container split">
           <div>
@@ -99,7 +109,6 @@
         </div>
       </section>
 
-      <!-- Problem: explains the practical reason the site exists. -->
       <section class="section section-muted">
         <div class="container narrow">
           <p class="eyebrow">The problem</p>
@@ -112,7 +121,6 @@
         </div>
       </section>
 
-      <!-- Services: simple checklist of what can be included. -->
       <section class="section" id="services">
         <div class="container">
           <div class="section-heading">
@@ -121,21 +129,21 @@
           </div>
 
           <div class="card-grid services-grid">
-            <article class="card">Simple website build</article>
-            <article class="card">Homepage copy cleanup</article>
-            <article class="card">Services section</article>
-            <article class="card">Service area section</article>
-            <article class="card">Contact form</article>
-            <article class="card">Click-to-call button</article>
-            <article class="card">Google review link</article>
-            <article class="card">Basic SEO page structure</article>
-            <article class="card">Google Business Profile cleanup guidance</article>
-            <article class="card">Monthly text/photo updates</article>
+            <article class="service-card">Simple website build</article>
+            <article class="service-card">Homepage copy cleanup</article>
+            <article class="service-card">Services section</article>
+            <article class="service-card">Service area section</article>
+            <article class="service-card">Contact form</article>
+            <article class="service-card">Click-to-call button</article>
+            <article class="service-card">Google review link</article>
+            <article class="service-card">Basic SEO page structure</article>
+            <article class="service-card">Google Business Profile cleanup guidance</article>
+            <article class="service-card">Monthly text/photo updates</article>
           </div>
         </div>
       </section>
 
-      <!-- Packages: early-client prices are intentionally highlighted. -->
+      <!-- Packages and boundaries are grouped so scope and price expectations stay together. -->
       <section class="section section-muted" id="packages">
         <div class="container">
           <div class="section-heading">
@@ -147,39 +155,55 @@
             </p>
           </div>
 
-          <div class="card-grid package-grid">
-            <article class="card package-card">
+          <div class="package-grid">
+            <article class="package-card package-free">
               <p class="package-label">Preview</p>
               <h3>Mockup Only</h3>
               <p class="price">Free</p>
               <p>Free for a limited number of local businesses.</p>
             </article>
 
-            <article class="card package-card featured-card">
+            <article class="package-card package-featured">
               <p class="package-label">Early-client offer</p>
+              <span class="package-badge">Most common</span>
               <h3>One-Page Starter Site</h3>
               <p class="price">$300-$500</p>
               <p>For first test clients who need a simple, clear single-page website.</p>
             </article>
 
-            <article class="card package-card">
+            <article class="package-card">
               <p class="package-label">Early-client offer</p>
               <h3>Simple 3-5 Page Site</h3>
               <p class="price">$750-$1,200</p>
               <p>For first test clients who need separate pages for services, about, and contact.</p>
             </article>
 
-            <article class="card package-card">
+            <article class="package-card package-care">
               <p class="package-label">Optional support</p>
               <h3>Monthly Care</h3>
               <p class="price">$49-$99/mo</p>
               <p>Simple monthly text and photo updates after launch.</p>
             </article>
           </div>
+
+          <div class="boundary-panel" aria-labelledby="boundaries-heading">
+            <div>
+              <p class="eyebrow">Boundaries</p>
+              <h2 id="boundaries-heading">What I don't include</h2>
+            </div>
+
+            <div class="boundary-grid">
+              <article class="boundary-item">No guaranteed rankings</article>
+              <article class="boundary-item">No paid ads</article>
+              <article class="boundary-item">No social media management</article>
+              <article class="boundary-item">No unlimited edits</article>
+              <article class="boundary-item">No complicated custom apps</article>
+              <article class="boundary-item">Larger changes quoted separately</article>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Process: the simple working path. -->
       <section class="section" id="process">
         <div class="container">
           <div class="section-heading">
@@ -212,47 +236,27 @@
         </div>
       </section>
 
-      <!-- Boundaries: sets clear expectations early. -->
-      <section class="section section-muted">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Boundaries</p>
-            <h2>Clear scope, no hype.</h2>
-          </div>
-
-          <div class="card-grid boundary-grid">
-            <article class="card">No guaranteed rankings</article>
-            <article class="card">No paid ads</article>
-            <article class="card">No social media management</article>
-            <article class="card">No unlimited edits</article>
-            <article class="card">No complicated custom apps</article>
-            <article class="card">Larger changes quoted separately</article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Samples: placeholders you can replace with real client examples later. -->
-      <section class="section" id="samples">
+      <section class="section section-muted" id="samples">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Future examples</p>
             <h2>Sample before-and-after cards.</h2>
           </div>
 
-          <div class="card-grid sample-grid">
-            <article class="card sample-card">
+          <div class="sample-grid">
+            <article class="sample-card">
               <div class="sample-placeholder">Before</div>
               <h3>Outdated homepage</h3>
               <p>Placeholder for a future example showing clearer copy and contact actions.</p>
             </article>
 
-            <article class="card sample-card">
+            <article class="sample-card">
               <div class="sample-placeholder">After</div>
               <h3>Clean service page</h3>
               <p>Placeholder for a future example showing simple service details and local trust.</p>
             </article>
 
-            <article class="card sample-card">
+            <article class="sample-card">
               <div class="sample-placeholder">Preview</div>
               <h3>Starter mockup</h3>
               <p>Placeholder for a future preview created for a local business.</p>
@@ -261,11 +265,10 @@
         </div>
       </section>
 
-      <!-- Contact: this form submits to Formspree. Update the action URL if you change providers. -->
       <section class="section contact-section" id="contact">
         <div class="container contact-grid">
           <div>
-            <p class="eyebrow">Contact</p>
+            <p class="eyebrow eyebrow-on-dark">Contact</p>
             <h2>Currently taking 2 discounted test clients.</h2>
             <p>
               Request a free preview and I will follow up with a simple direction for your website.
@@ -274,37 +277,39 @@
             </p>
           </div>
 
-          <form
-            class="contact-form"
-            action="https://formspree.io/f/xqevqdpw"
-            method="POST"
-          >
-            <input
-              type="hidden"
-              name="_subject"
-              value="New ServiceSide Sites preview request"
-            />
+          <form class="contact-form" action="https://formspree.io/f/xqevqdpw" method="POST">
+            <input type="hidden" name="_subject" value="New ServiceSide Sites preview request" />
 
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
 
-            <label for="business">Business name</label>
-            <input id="business" name="business" type="text" placeholder="Business name" />
+            <div class="form-field">
+              <label for="business">Business name</label>
+              <input id="business" name="business" type="text" placeholder="Business name" />
+            </div>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
 
-            <label for="message">What do you need help with?</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Tell me what kind of service business you run and what you want the website to do."
-              required
-            ></textarea>
+            <div class="form-field">
+              <label for="message">What do you need help with?</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me what kind of service business you run and what you want the website to do."
+                required
+              ></textarea>
+            </div>
 
             <button class="button button-primary" type="submit">Request a free preview</button>
-            <p class="form-note">Your request will be sent securely through Formspree.</p>
+            <p class="form-note">
+              I'll follow up within 1-2 business days with a simple preview direction.
+            </p>
           </form>
         </div>
       </section>
@@ -313,7 +318,8 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>&copy; <span id="year">2026</span> ServiceSide Sites.</p>
-        <a href="#top">Back to top</a>
+        <p>Simple websites for local service businesses.</p>
+        <a href="mailto:info@servicesidesites.com">info@servicesidesites.com</a>
       </div>
     </footer>
 
