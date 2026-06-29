@@ -19,6 +19,7 @@
     BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --space-section: clamp(4rem, 8vw, 6.5rem);
   --focus-ring: 0 0 0 4px rgba(47, 126, 137, 0.24);
+  --transition-smooth: 180ms ease;
 }
 
 * {
@@ -258,12 +259,93 @@ ol {
   text-decoration: none;
 }
 
+.nav-cta,
+.button,
+.service-card,
+.package-card,
+.boundary-item,
+.sample-card,
+.contact-form,
+.hero-panel {
+  will-change: transform;
+}
+
+/* Animation layer: calm opacity/transform effects only. */
+.animate-fade-up {
+  animation: fade-up 650ms ease both;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 620ms ease, transform 620ms ease;
+}
+
+.js-enabled .reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.package-label,
+.package-badge {
+  animation: badge-soft-in 520ms ease both;
+}
+
+.package-badge {
+  animation-delay: 90ms;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badge-soft-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-gradient-drift {
+  0% {
+    background-position: 82% 20%, 0 0;
+  }
+
+  50% {
+    background-position: 78% 24%, 0 0;
+  }
+
+  100% {
+    background-position: 82% 20%, 0 0;
+  }
+}
+
 /* Hero layout: high contrast, generous spacing, and large tap targets. */
 .hero {
   padding: clamp(5rem, 10vw, 8rem) 0 clamp(5rem, 9vw, 7rem);
   background:
     radial-gradient(circle at 82% 20%, rgba(47, 126, 137, 0.18), transparent 34%),
     var(--color-hero);
+  background-repeat: no-repeat;
+  animation: hero-gradient-drift 18s ease-in-out infinite;
 }
 
 .hero-grid {
@@ -412,7 +494,7 @@ ol {
 .card-grid,
 .services-grid,
 .package-grid,
-.sample-grid,
+sample-grid,
 .boundary-grid {
   display: grid;
   gap: 1rem;
@@ -429,6 +511,8 @@ ol {
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   font-weight: 800;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth),
+    transform var(--transition-smooth);
 }
 
 .service-card::before {
@@ -453,6 +537,8 @@ ol {
   border: 1px solid rgba(217, 228, 229, 0.95);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth),
+    transform var(--transition-smooth);
 }
 
 .package-free {
@@ -544,6 +630,8 @@ ol {
   border-radius: var(--radius-small);
   color: var(--color-primary);
   font-weight: 800;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth),
+    transform var(--transition-smooth);
 }
 
 .boundary-item::before {
@@ -599,6 +687,8 @@ ol {
   border: 1.5px dashed rgba(102, 117, 121, 0.42);
   border-radius: var(--radius);
   color: var(--color-muted);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth),
+    transform var(--transition-smooth);
 }
 
 .sample-placeholder {
@@ -747,6 +837,18 @@ ol {
 }
 
 @media (min-width: 900px) {
+  .service-card:hover,
+  .package-card:hover,
+  .boundary-item:hover,
+  .sample-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 44px rgba(32, 52, 58, 0.1);
+  }
+
+  .package-featured:hover {
+    box-shadow: 0 24px 56px rgba(47, 126, 137, 0.16);
+  }
+
   .hero-grid,
   .split,
   .contact-grid {
@@ -809,5 +911,26 @@ ol {
     min-height: 40px;
     padding-inline: 0.7rem;
     font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .animate-fade-up {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero {
+    animation: none;
   }
 }
