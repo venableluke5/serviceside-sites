@@ -494,7 +494,7 @@ ol {
 .card-grid,
 .services-grid,
 .package-grid,
-sample-grid,
+.sample-grid,
 .boundary-grid {
   display: grid;
   gap: 1rem;
