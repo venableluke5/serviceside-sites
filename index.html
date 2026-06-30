@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ServiceSide Sites | Simple Websites for Local Service Businesses</title>
+    <title>ServiceSide Sites | Simple Websites for Bangor & Brewer Service Businesses</title>
     <meta
       name="description"
-      content="ServiceSide Sites builds simple, trustworthy websites for local service businesses so customers can quickly understand, trust, and contact them."
+      content="ServiceSide Sites builds simple, trustworthy websites for Bangor and Brewer area service businesses so customers can quickly understand, trust, and contact them."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -49,7 +49,7 @@
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#packages">Packages</a>
           <a href="#process">Process</a>
-          <a href="#samples">Examples</a>
+          <a href="#samples">Preview</a>
         </nav>
 
         <a class="nav-cta" href="#contact">Free preview</a>
@@ -61,16 +61,17 @@
       <section class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy animate-fade-up">
-            <p class="eyebrow eyebrow-on-dark">Clear, practical websites for local service businesses</p>
-            <h1>Simple websites that help local customers trust you and get in touch.</h1>
+            <p class="eyebrow eyebrow-on-dark">Bangor & Brewer area website previews</p>
+            <h1>Simple websites for Bangor & Brewer service businesses.</h1>
             <p class="hero-text">
-              ServiceSide Sites builds straightforward, trustworthy websites for local service
-              businesses so customers can quickly understand what you do, where you work, and how to
-              contact you.
+              ServiceSide Sites builds straightforward, trustworthy websites for Bangor & Brewer
+              area service businesses so customers can quickly understand what you do, where you
+              work, and how to contact you.
             </p>
+            <p class="availability-note">Currently taking 2 discounted test clients.</p>
             <div class="button-row">
               <a class="button button-primary" href="#contact">Request a free website preview</a>
-              <a class="button button-secondary button-secondary-on-dark" href="#packages">
+              <a class="button button-secondary button-link-on-dark" href="#packages">
                 View starter packages
               </a>
             </div>
@@ -245,27 +246,28 @@
       <section class="section section-muted" id="samples">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Future examples</p>
-            <h2>Sample before-and-after cards.</h2>
+            <p class="eyebrow">How a preview works</p>
+            <h2>A quick way to see a clearer website direction before you commit.</h2>
           </div>
 
-          <div class="sample-grid">
-            <article class="sample-card">
-              <div class="sample-placeholder">Before</div>
-              <h3>Outdated homepage</h3>
-              <p>Placeholder for a future example showing clearer copy and contact actions.</p>
+          <!-- TODO: swap in real before/after examples once first 2 test clients are live -->
+          <div class="preview-step-grid">
+            <article class="preview-step-card reveal">
+              <span class="preview-step-number">1</span>
+              <h3>Fill out a short form</h3>
+              <p>Share the basics: what you do, where you work, and how customers contact you.</p>
             </article>
 
-            <article class="sample-card">
-              <div class="sample-placeholder">After</div>
-              <h3>Clean service page</h3>
-              <p>Placeholder for a future example showing simple service details and local trust.</p>
+            <article class="preview-step-card reveal">
+              <span class="preview-step-number">2</span>
+              <h3>I create a simple preview</h3>
+              <p>You get a practical direction for a cleaner homepage and contact path.</p>
             </article>
 
-            <article class="sample-card">
-              <div class="sample-placeholder">Preview</div>
-              <h3>Starter mockup</h3>
-              <p>Placeholder for a future preview created for a local business.</p>
+            <article class="preview-step-card reveal">
+              <span class="preview-step-number">3</span>
+              <h3>You review it</h3>
+              <p>If it feels useful, we can turn the preview into a simple live website.</p>
             </article>
           </div>
         </div>
@@ -275,7 +277,7 @@
         <div class="container contact-grid">
           <div>
             <p class="eyebrow eyebrow-on-dark">Contact</p>
-            <h2>Currently taking 2 discounted test clients.</h2>
+            <h2>Request a free preview for your service business.</h2>
             <p>
               Request a free preview and I will follow up with a simple direction for your website.
               You can also email
@@ -283,22 +285,46 @@
             </p>
           </div>
 
-          <form class="contact-form" action="https://formspree.io/f/xqevqdpw" method="POST">
+          <form class="contact-form" action="https://formspree.io/f/xqevqdpw" method="POST" novalidate>
             <input type="hidden" name="_subject" value="New ServiceSide Sites preview request" />
 
             <div class="form-field">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="e.g. Jordan Smith"
+                autocomplete="name"
+                required
+                aria-describedby="name-error"
+              />
+              <span class="field-error" id="name-error" aria-live="polite"></span>
             </div>
 
             <div class="form-field">
               <label for="business">Business name</label>
-              <input id="business" name="business" type="text" placeholder="Business name" />
+              <input
+                id="business"
+                name="business"
+                type="text"
+                placeholder="e.g. Smith Family Landscaping"
+                autocomplete="organization"
+              />
             </div>
 
             <div class="form-field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="e.g. jordan@example.com"
+                autocomplete="email"
+                required
+                aria-describedby="email-error"
+              />
+              <span class="field-error" id="email-error" aria-live="polite"></span>
             </div>
 
             <div class="form-field">
@@ -307,9 +333,11 @@
                 id="message"
                 name="message"
                 rows="5"
-                placeholder="Tell me what kind of service business you run and what you want the website to do."
+                placeholder="e.g. I need a one-page site with a contact form and service area."
                 required
+                aria-describedby="message-error"
               ></textarea>
+              <span class="field-error" id="message-error" aria-live="polite"></span>
             </div>
 
             <button class="button button-primary" type="submit">Request a free preview</button>
