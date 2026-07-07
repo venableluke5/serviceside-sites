@@ -15,7 +15,7 @@
 - Industry confirmed as heating / HVAC / local service business
 - The site should use a trustworthy, practical, local, dependable tone
 - Phone: `(207) 299-6895`
-- Address: `137 Davis Road, Eddington, ME 04428`
+- Address on file: `137 Davis Road, Eddington, ME 04428`
 - Owner/operator: `Tim Slater`
 - Experience: `25 years in the field`
 - Licensed and insured status: confirmed by user
@@ -64,6 +64,7 @@
 ## Working assumptions for the mockup
 
 - Use confirmed business facts directly in the mockup now that phone, address, owner, experience, and licensing status are provided
+- Keep the public-facing site focused on `Central Maine` service-area wording instead of the full street address
 - Keep still-unknown items as placeholders until verified
 - Focus the homepage on clear service messaging, easy calling, and quote-request flow
 - Favor strong heating-service positioning over generic home-services copy
@@ -71,7 +72,7 @@
 
 ## Needed real content
 
-- exact service area coverage beyond the Eddington address
+- exact service area coverage within Central Maine
 - brand colors
 - photos of work, trucks, team, or equipment
 - reviews/testimonials
