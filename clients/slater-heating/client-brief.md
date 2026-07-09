@@ -6,7 +6,7 @@
 - Industry: heating / HVAC / local service business
 - Project type: website mockup
 - Primary goal: generate calls and quote requests
-- Primary CTA: `Call Now` or `Request a Quote`
+- Primary CTA: `Call Now`
 - Target customer: homeowners and small property owners needing heating service, repairs, installs, or maintenance
 
 ## Confirmed information
@@ -16,6 +16,7 @@
 - The site should use a trustworthy, practical, local, dependable tone
 - Phone: `(207) 299-6895`
 - Address on file: `137 Davis Road, Eddington, ME 04428`
+- Public-facing location wording approved: `based out of Eddington` without showing the street address
 - Owner/operator: `Tim Slater`
 - Experience: `25 years in the field`
 - Licensed and insured status: confirmed by user
@@ -32,6 +33,7 @@
   - commercial HVAC
 - Facebook presence: active page with `441 likes`
 - Facebook content direction: posts about heat pump cleanings and service work
+- Facebook customer quotes have been added to the mockup as provided by the user; confirm permission and final wording before launch
 - Yelp status:
   - unclaimed listing
   - no visible reviews
@@ -64,9 +66,9 @@
 ## Working assumptions for the mockup
 
 - Use confirmed business facts directly in the mockup now that phone, address, owner, experience, and licensing status are provided
-- Keep the public-facing site focused on `Central Maine` service-area wording instead of the full street address
+- Keep the public-facing site focused on `based out of Eddington` and `Central Maine` wording instead of the full street address
 - Keep still-unknown items as placeholders until verified
-- Focus the homepage on clear service messaging, easy calling, and quote-request flow
+- Focus the homepage on clear service messaging and easy calling
 - Favor strong heating-service positioning over generic home-services copy
 - Keep the site homeowner-friendly even though a commercial HVAC category appears on Yelp
 
@@ -75,7 +77,6 @@
 - exact service area coverage within Central Maine
 - brand colors
 - photos of work, trucks, team, or equipment
-- reviews/testimonials
 - business hours
 - email
 - website/domain if a live site will be launched
@@ -86,7 +87,7 @@
 - exact town list or travel radius
 - business hours
 - pricing / estimate wording
-- real customer reviews, if any
+- confirmation of permission/final wording for Facebook customer quotes before launch
 
 ## Business positioning notes
 
@@ -113,8 +114,8 @@ Do not turn any of the following into live claims unless they are verified first
 - 24/7 service
 - financing
 - service area towns or regions
-- customer reviews or ratings
-- testimonials
+- additional customer reviews or ratings beyond the approved Facebook quotes
+- additional testimonials beyond the approved Facebook quotes
 - certifications
 - awards
 - business hours
@@ -131,4 +132,4 @@ Do not turn any of the following into live claims unless they are verified first
 - Use placeholders wherever real business facts are still missing
 - Prefer the logo files already in the client folder before creating any temporary wordmark treatment
 - Use the confirmed phone, address, owner/operator name, experience, and licensed/insured status directly
-- Keep service-area coverage, hours, email, pricing, and reviews as placeholders until confirmed
+- Keep service-area coverage, hours, email, and pricing as placeholders until confirmed
