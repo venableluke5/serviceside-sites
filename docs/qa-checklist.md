@@ -1,33 +1,16 @@
-# QA Checklist
+Add checks for:
 
-Run this before sending a client mockup.
-
-## Content
-
-- Business name is correct.
-- Phone number is correct and all `tel:` links work.
-- Service area is accurate.
-- Placeholder copy has been removed.
-- Page title and meta description are client-specific.
-
-## Layout
-
-- Mobile layout works at 320px width.
-- Tablet and desktop layouts are clean.
-- Text does not overlap or overflow.
-- Buttons and links have visible focus states.
-- Images have useful `alt` text when added.
-
-## Technical
-
-- Tailwind build has been run.
-- `css/styles.css` is committed after the build.
-- No React, Vite, npm, Bootstrap, jQuery, or external UI kits were added.
-- Console has no JavaScript errors.
-- Lighthouse basics are checked when practical.
-
-## Handoff
-
-- Client-specific notes are captured in `docs/client-brief.md`.
-- Copy draft is captured in `docs/copy.md`.
-- Design choices are captured in `docs/design-direction.md`.
+Does the first screen immediately explain the business?
+Does the site look clearly different from the previous project?
+Is the primary call to action obvious?
+Are the strongest trust details visible early?
+Does the mobile version feel intentionally designed?
+Are the photos cropped and treated consistently?
+Are there any generic or invented claims?
+Do section layouts have enough variation?
+Does the typography feel appropriate to the industry?
+Are buttons, forms, hover states, and navigation polished?
+Does it work at approximately 390px, 768px, 1024px, and 1440px?
+Are animations subtle and disabled or reduced appropriately when required?
+Are image sizes and page weight reasonable?
+Does the finished site feel better than an AI-builder default?

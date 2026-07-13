@@ -1,0 +1,13 @@
+- Write specifically for the business and its customers.
+- Prefer concrete services, locations, experience, and outcomes.
+- Avoid phrases such as:
+  - "Your trusted partner"
+  - "We are passionate about"
+  - "Quality you can count on"
+  - "Tailored solutions"
+  - "Elevate your experience"
+- Do not invent credentials, years, reviews, locations, or guarantees.
+- Mark missing information clearly inside project.md.
+- Keep headings short and meaningful.
+- Make the next action obvious.
+- Write for normal customers, not other designers.

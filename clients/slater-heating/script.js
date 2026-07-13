@@ -3,28 +3,48 @@ const siteNav = document.querySelector("[data-site-nav]");
 const yearTarget = document.querySelector("[data-current-year]");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const heroSection = document.querySelector(".hero-section");
-const requestForm = document.querySelector("[data-request-form]");
-const formStatus = document.querySelector("[data-form-status]");
+const contactSection = document.querySelector(".contact-section");
+const siteFooter = document.querySelector(".site-footer");
 
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
 
 if (menuToggle && siteNav) {
-  const closeMenu = () => {
+  const firstNavLink = siteNav.querySelector("a");
+
+  const closeMenu = ({ returnFocus = false } = {}) => {
     siteNav.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
+
+    if (returnFocus) {
+      menuToggle.focus();
+    }
   };
 
   menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeMenu({ returnFocus: true });
+      return;
+    }
+
+    siteNav.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+    firstNavLink?.focus();
   });
 
   siteNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+      closeMenu({ returnFocus: true });
+    }
   });
 
   window.addEventListener("resize", () => {
@@ -34,22 +54,54 @@ if (menuToggle && siteNav) {
   });
 }
 
-if (heroSection) {
-  const ctaObserver = new IntersectionObserver(
+if ("IntersectionObserver" in window && heroSection) {
+  let heroIsVisible = true;
+  let contactIsVisible = false;
+  let footerIsVisible = false;
+
+  const updateMobileCta = () => {
+    document.body.classList.toggle(
+      "show-mobile-cta",
+      !heroIsVisible && !contactIsVisible && !footerIsVisible,
+    );
+  };
+
+  const heroObserver = new IntersectionObserver(
     ([entry]) => {
-      const shouldShow = !entry.isIntersecting;
-      document.body.classList.toggle("show-mobile-cta", shouldShow);
+      heroIsVisible = entry.isIntersecting;
+      updateMobileCta();
     },
-    {
-      threshold: 0.16,
-    },
+    { threshold: 0.16 },
   );
 
-  ctaObserver.observe(heroSection);
+  const ctaBlockerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === contactSection) {
+          contactIsVisible = entry.isIntersecting;
+        }
+
+        if (entry.target === siteFooter) {
+          footerIsVisible = entry.isIntersecting;
+        }
+      });
+      updateMobileCta();
+    },
+    { threshold: 0.01 },
+  );
+
+  heroObserver.observe(heroSection);
+  if (contactSection) ctaBlockerObserver.observe(contactSection);
+  if (siteFooter) ctaBlockerObserver.observe(siteFooter);
 }
 
 if (revealItems.length) {
-  const revealObserver = new IntersectionObserver(
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
@@ -66,22 +118,8 @@ if (revealItems.length) {
     },
   );
 
-  revealItems.forEach((item) => {
-    revealObserver.observe(item);
-  });
-}
-
-if (requestForm) {
-  requestForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!requestForm.reportValidity()) {
-      return;
-    }
-
-    if (formStatus) {
-      formStatus.textContent =
-        "This preview form is ready to connect to Slater Heating's preferred service-request inbox before launch.";
-    }
-  });
+    revealItems.forEach((item) => {
+      revealObserver.observe(item);
+    });
+  }
 }

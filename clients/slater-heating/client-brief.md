@@ -18,6 +18,8 @@
 - Address on file: `137 Davis Road, Eddington, ME 04428`
 - Public-facing location wording approved: `based out of Eddington` without showing the street address
 - Owner/operator: `Tim Slater`
+- Primary service technician: `Tim Slater`
+- Phone-answering note: the business phone is commonly answered by Tim's wife; do not imply Tim personally answers every call
 - Experience: `25 years in the field`
 - Licensed and insured status: confirmed by user
 - Description:
@@ -128,6 +130,7 @@ Do not turn any of the following into live claims unless they are verified first
 ## Briefing note for future site generation
 
 - Start with a call-first or quote-first homepage
+- Use business-level phone language such as `Call Slater Heating` or `Call Now`; do not use `Call Tim` or promise that callers speak directly with Tim
 - Keep sections easy to scan on mobile
 - Use placeholders wherever real business facts are still missing
 - Prefer the logo files already in the client folder before creating any temporary wordmark treatment

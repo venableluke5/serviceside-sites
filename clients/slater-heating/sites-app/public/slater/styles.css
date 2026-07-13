@@ -12,8 +12,8 @@
   --gold: #efb75b;
   --white: #ffffff;
   --container: 1220px;
-  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
-  --body: "Inter", "Segoe UI", Arial, sans-serif;
+  --display: "Arial Narrow", "Roboto Condensed", "Franklin Gothic Medium Cond", Arial, sans-serif;
+  --body: "Segoe UI", Aptos, Arial, sans-serif;
   --header-height: 78px;
   --shadow: 0 22px 55px rgba(17, 25, 29, 0.16);
 }
@@ -53,14 +53,6 @@ a {
   color: inherit;
 }
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 3px;
-}
-
 h1,
 h2,
 h3,
@@ -77,9 +69,9 @@ h1,
 h2,
 h3 {
   font-family: var(--display);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
   text-wrap: balance;
 }
 
@@ -140,11 +132,6 @@ textarea {
   align-items: center;
 }
 
-.brand picture,
-.footer-brand picture {
-  display: block;
-}
-
 .brand-logo {
   width: min(206px, 47vw);
   height: auto;
@@ -163,14 +150,12 @@ textarea {
 }
 
 .menu-toggle i,
-.menu-toggle i::before,
-.menu-toggle i::after {
+.menu-toggle i::before {
   display: block;
   width: 1.25rem;
   height: 2px;
   background: var(--gold);
   content: "";
-  transition: background-color 180ms ease, transform 180ms ease, top 180ms ease;
 }
 
 .menu-toggle i {
@@ -181,26 +166,6 @@ textarea {
   position: absolute;
   top: -0.36rem;
   left: 0;
-}
-
-.menu-toggle i::after {
-  position: absolute;
-  top: 0.36rem;
-  left: 0;
-}
-
-.menu-toggle[aria-expanded="true"] i {
-  background: transparent;
-}
-
-.menu-toggle[aria-expanded="true"] i::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.menu-toggle[aria-expanded="true"] i::after {
-  top: 0;
-  transform: rotate(-45deg);
 }
 
 .site-nav {
@@ -239,7 +204,6 @@ textarea {
 }
 
 .header-phone {
-  display: none;
   color: var(--white);
   font-size: 0.94rem;
 }
@@ -343,13 +307,6 @@ textarea {
   opacity: 0.57;
 }
 
-.hero-image-wrap picture,
-.service-feature-image picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .hero-image {
   width: 100%;
   height: 100%;
@@ -378,8 +335,7 @@ textarea {
 .hero-content h1 {
   max-width: none;
   color: var(--white);
-  font-size: clamp(3.1rem, 11vw, 4.2rem);
-  line-height: 0.9;
+  font-size: clamp(3.25rem, 10vw, 4.25rem);
 }
 
 .hero-lead {
@@ -398,10 +354,9 @@ textarea {
 .hero-note {
   max-width: 20rem;
   margin-top: 2rem;
-  padding: 1rem 1.1rem 1.1rem;
-  border-top: 2px solid var(--gold);
-  background: rgba(10, 16, 19, 0.82);
-  color: rgba(255, 255, 255, 0.92);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.92rem;
 }
 
@@ -492,7 +447,7 @@ textarea {
 .reviews-intro h2,
 .contact-copy h2 {
   color: var(--ink);
-  font-size: clamp(2.55rem, 7.5vw, 4.25rem);
+  font-size: clamp(2.8rem, 8vw, 4.6rem);
 }
 
 .section-intro > div > p,
@@ -552,7 +507,7 @@ textarea {
 .work-feature h3,
 .request-panel h3 {
   color: var(--ink);
-  font-size: clamp(1.9rem, 6.5vw, 3rem);
+  font-size: clamp(2rem, 7vw, 3.2rem);
 }
 
 .service-feature-copy > p:last-child {
@@ -591,7 +546,6 @@ textarea {
 .service-item h3 {
   color: var(--ink);
   font-size: 1.7rem;
-  font-weight: 700;
 }
 
 .service-item p,
@@ -647,11 +601,6 @@ textarea {
   object-fit: contain;
 }
 
-.approach-photo picture,
-.work-tall picture {
-  display: block;
-}
-
 .approach-photo figcaption,
 .work-tall figcaption,
 .work-detail figcaption {
@@ -690,7 +639,7 @@ textarea {
   color: var(--white);
   font-family: var(--display);
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: -0.025em;
   line-height: 1;
 }
@@ -750,7 +699,7 @@ textarea {
   padding: 0.28rem 0.45rem;
   background: var(--coal);
   color: var(--white);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -846,7 +795,7 @@ blockquote footer strong {
 
 blockquote footer span {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
 }
 
 .contact-section {
@@ -893,7 +842,7 @@ blockquote footer span {
 
 .contact-meta span {
   color: var(--ink-soft);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -963,12 +912,13 @@ blockquote footer span {
 
 .field input:focus,
 .field textarea:focus {
-  outline-color: var(--gold);
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .form-status {
   color: rgba(255, 255, 255, 0.64);
-  font-size: 0.84rem;
+  font-size: 0.79rem;
 }
 
 .site-footer {
@@ -1014,9 +964,12 @@ blockquote footer span {
   position: fixed;
   right: 0.75rem;
   bottom: max(0.75rem, env(safe-area-inset-bottom));
-  width: min(13.5rem, calc(100% - 1.5rem));
+  left: 0.75rem;
   z-index: 50;
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--gold);
   box-shadow: 0 15px 35px rgba(17, 25, 29, 0.32);
   opacity: 0;
   pointer-events: none;
@@ -1025,18 +978,21 @@ blockquote footer span {
 }
 
 .mobile-cta a {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
   min-height: 3.2rem;
   align-items: center;
   justify-content: center;
   padding: 0.7rem;
-  background: var(--orange);
+  background: var(--coal);
   color: var(--white);
   font-size: 0.84rem;
   font-weight: 900;
   text-align: center;
   text-decoration: none;
+}
+
+.mobile-cta a:first-child {
+  background: var(--orange);
 }
 
 body.show-mobile-cta .mobile-cta {
@@ -1046,17 +1002,12 @@ body.show-mobile-cta .mobile-cta {
 }
 
 .reveal {
-  opacity: 1;
-  transform: none;
-}
-
-.js .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 600ms ease, transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.js .reveal.is-visible {
+.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1267,7 +1218,7 @@ body.show-mobile-cta .mobile-cta {
   }
 
   .hero-content h1 {
-    font-size: clamp(4.5rem, 5.4vw, 6.2rem);
+    font-size: clamp(4.8rem, 6.2vw, 7.2rem);
   }
 
   .hero-lead {
@@ -1296,7 +1247,7 @@ body.show-mobile-cta .mobile-cta {
   .approach-copy h2,
   .reviews-intro h2,
   .contact-copy h2 {
-    font-size: clamp(3.35rem, 4.5vw, 4.75rem);
+    font-size: clamp(3.5rem, 5vw, 5.35rem);
   }
 
   .service-feature-image {
@@ -1330,12 +1281,6 @@ body.show-mobile-cta .mobile-cta {
   }
 }
 
-@media (min-width: 1100px) {
-  .header-phone {
-    display: inline;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1348,10 +1293,5 @@ body.show-mobile-cta .mobile-cta {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .js .reveal {
-    opacity: 1;
-    transform: none;
   }
 }
