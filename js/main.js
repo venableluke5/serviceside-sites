@@ -86,7 +86,70 @@ if (contactForm) {
   const statusMessage = contactForm.querySelector("[data-form-status-message]");
   const statusEmail = contactForm.querySelector("[data-form-status-email]");
   const idleButtonLabel = submitLabel?.textContent.trim() || "Request a Free Mockup";
+  const requiredFields = Array.from(contactForm.querySelectorAll("[required]"));
   let isSubmitting = false;
+
+  const getFieldError = (field) => {
+    if (field.validity.valueMissing) {
+      return field.dataset.requiredMessage || "Please complete this field.";
+    }
+
+    if (field.validity.typeMismatch && field.type === "email") {
+      return "Please enter a valid email address.";
+    }
+
+    return "Please check this field.";
+  };
+
+  const setFieldValidity = (field) => {
+    const errorId = field.getAttribute("aria-describedby");
+    const errorEl = errorId ? document.getElementById(errorId) : null;
+
+    if (field.validity.valid) {
+      field.removeAttribute("aria-invalid");
+      if (errorEl) {
+        errorEl.textContent = "";
+        errorEl.hidden = true;
+      }
+      return true;
+    }
+
+    field.setAttribute("aria-invalid", "true");
+    if (errorEl) {
+      errorEl.textContent = getFieldError(field);
+      errorEl.hidden = false;
+    }
+    return false;
+  };
+
+  const clearFieldValidity = (field) => {
+    const errorId = field.getAttribute("aria-describedby");
+    const errorEl = errorId ? document.getElementById(errorId) : null;
+    field.removeAttribute("aria-invalid");
+    if (errorEl) {
+      errorEl.textContent = "";
+      errorEl.hidden = true;
+    }
+  };
+
+  requiredFields.forEach((field) => {
+    field.addEventListener("invalid", (event) => {
+      event.preventDefault();
+      setFieldValidity(field);
+    });
+
+    field.addEventListener("blur", () => {
+      if (field.value.trim() || field.hasAttribute("aria-invalid")) {
+        setFieldValidity(field);
+      }
+    });
+
+    field.addEventListener("input", () => {
+      if (field.hasAttribute("aria-invalid")) {
+        setFieldValidity(field);
+      }
+    });
+  });
 
   const setFormState = (state, message = "") => {
     contactForm.dataset.state = state;
@@ -111,8 +174,10 @@ if (contactForm) {
       return;
     }
 
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
+    const invalidFields = requiredFields.filter((field) => !setFieldValidity(field));
+
+    if (invalidFields.length) {
+      invalidFields[0].focus();
       return;
     }
 
@@ -135,9 +200,12 @@ if (contactForm) {
       }
 
       contactForm.reset();
+      requiredFields.forEach((field) => clearFieldValidity(field));
       setFormState("success", "Thanks — your request was sent successfully.");
+      statusEl?.focus();
     } catch {
       setFormState("failure", "Your request could not be sent. Please try again, or ");
+      statusEl?.focus();
     } finally {
       isSubmitting = false;
       submitButton.disabled = false;
