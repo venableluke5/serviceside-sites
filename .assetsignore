@@ -1,0 +1,9 @@
+*
+!index.html
+!css/
+!css/styles.css
+!js/
+!js/main.js
+!images/
+!images/**
+images/.gitkeep
