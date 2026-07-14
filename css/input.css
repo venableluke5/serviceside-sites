@@ -107,6 +107,13 @@
     outline: none;
   }
 
+  .button-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: var(--shadow-soft);
+  }
+
   .button-secondary {
     border: 1px solid rgba(32, 52, 58, 0.14);
     background: rgba(255, 255, 255, 0.82);
@@ -147,6 +154,31 @@
     line-height: 1.35;
     color: #20343a;
     box-shadow: 0 10px 24px rgba(32, 52, 58, 0.05);
+  }
+
+  .form-status {
+    border: 1px solid rgba(32, 52, 58, 0.12);
+    border-radius: 1rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .form-status[data-state="submitting"] {
+    background: rgba(32, 52, 58, 0.05);
+    color: #20343a;
+  }
+
+  .form-status[data-state="success"] {
+    border-color: rgba(47, 126, 137, 0.24);
+    background: rgba(47, 126, 137, 0.08);
+    color: #20343a;
+  }
+
+  .form-status[data-state="failure"] {
+    border-color: rgba(190, 18, 60, 0.22);
+    background: rgba(190, 18, 60, 0.06);
+    color: #881337;
   }
 
   .reveal {

@@ -6,9 +6,9 @@ Use this before starting a client mockup.
 
 - Business name: ServiceSide Sites
 - Industry: Website design and local SEO support for small service businesses
-- Service area: TBD
-- Primary phone: TBD
-- Email: TBD
+- Service area: Based in the Bangor, Maine area, helping service businesses across Maine
+- Primary phone: 781-975-8872
+- Email: info@servicesidesites.com
 - Address: TBD
 - Hours: TBD
 
@@ -41,6 +41,8 @@ Use this before starting a client mockup.
 - Social links: TBD
 - Photos available: TBD
 - Logo available: TBD
+- Contact form recipient: info@servicesidesites.com
+- Contact form endpoint: https://formspree.io/f/xqevqdpw
 
 ## Notes
 

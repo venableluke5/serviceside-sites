@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ServiceSide Sites builds simple, mobile-friendly websites for small local service businesses."
+      content="Based in the Bangor, Maine area, ServiceSide Sites builds simple, mobile-friendly websites for service businesses across Maine."
     />
-    <title>ServiceSide Sites | Simple websites for local service businesses</title>
+    <title>ServiceSide Sites | Websites for Maine service businesses</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="bg-sss-background text-sss-primary antialiased">
@@ -64,7 +64,7 @@
             </nav>
 
             <div class="ml-auto flex shrink-0 items-center gap-3">
-              <a class="hidden text-sm font-semibold text-sss-muted transition hover:text-sss-primary md:inline-flex" href="tel:7819758872">
+              <a class="hidden text-sm font-semibold text-sss-muted transition hover:text-sss-primary md:inline-flex" href="tel:+17819758872">
                 781-975-8872
               </a>
               <a class="button-primary h-10 whitespace-nowrap px-4 text-sm sm:h-11 sm:px-5" href="#contact">
@@ -401,7 +401,7 @@
                 <div class="rounded-[1.25rem] border border-sss-primary/10 bg-white px-4 py-4 shadow-[0_14px_32px_rgba(32,52,58,0.06)]">
                   <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-sss-muted">Phone</dt>
                   <dd class="mt-2 text-base font-semibold text-sss-primary">
-                    <a class="transition hover:text-sss-accent" href="tel:7819758872">781-975-8872</a>
+                    <a class="transition hover:text-sss-accent" href="tel:+17819758872">781-975-8872</a>
                   </dd>
                 </div>
 
@@ -409,6 +409,13 @@
                   <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-sss-muted">Email</dt>
                   <dd class="mt-2 text-base font-semibold text-sss-primary">
                     <a class="transition hover:text-sss-accent" href="mailto:info@servicesidesites.com">info@servicesidesites.com</a>
+                  </dd>
+                </div>
+
+                <div class="rounded-[1.25rem] border border-sss-primary/10 bg-white px-4 py-4 shadow-[0_14px_32px_rgba(32,52,58,0.06)] sm:col-span-2">
+                  <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-sss-muted">Location and service area</dt>
+                  <dd class="mt-2 text-sm font-semibold leading-6 text-sss-primary">
+                    Based in the Bangor, Maine area, helping service businesses across Maine.
                   </dd>
                 </div>
               </dl>
@@ -420,8 +427,16 @@
 
             <div class="reveal" data-reveal>
               <div class="rounded-[2rem] border border-sss-primary/10 bg-white p-6 shadow-[0_24px_60px_rgba(32,52,58,0.12)] sm:p-8">
-                <!-- Connect this form to Formspree, Netlify Forms, Basin, or another form endpoint before going live. -->
-                <form action="#" method="post" class="grid gap-4">
+                <form
+                  id="contact-form"
+                  action="https://formspree.io/f/xqevqdpw"
+                  method="post"
+                  class="grid gap-4"
+                  data-contact-form
+                  data-state="idle"
+                  aria-busy="false"
+                  aria-describedby="form-status"
+                >
                   <div class="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label class="text-sm font-semibold text-sss-primary" for="contact-name">Name</label>
@@ -501,9 +516,30 @@
                     ></textarea>
                   </div>
 
-                  <button class="button-primary h-12 px-6 text-sm sm:w-fit" type="submit">
-                    Request a Free Mockup
+                  <button class="button-primary h-12 px-6 text-sm sm:w-fit" type="submit" data-submit-button>
+                    <span data-submit-label>Request a Free Mockup</span>
                   </button>
+
+                  <div
+                    id="form-status"
+                    class="form-status"
+                    data-form-status
+                    data-state="idle"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    hidden
+                  >
+                    <span data-form-status-message></span>
+                    <a
+                      class="font-semibold underline underline-offset-2"
+                      data-form-status-email
+                      href="mailto:info@servicesidesites.com"
+                      hidden
+                    >
+                      Email info@servicesidesites.com
+                    </a>
+                  </div>
                 </form>
               </div>
             </div>
@@ -520,7 +556,7 @@
 
           <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-sss-muted lg:justify-end">
             <span>&copy; <span data-current-year></span> ServiceSide Sites</span>
-            <a class="transition hover:text-sss-primary" href="tel:7819758872">781-975-8872</a>
+            <a class="transition hover:text-sss-primary" href="tel:+17819758872">781-975-8872</a>
             <a class="transition hover:text-sss-primary" href="mailto:info@servicesidesites.com">info@servicesidesites.com</a>
           </div>
         </div>
