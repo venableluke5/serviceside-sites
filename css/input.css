@@ -1041,8 +1041,16 @@
   }
 
   .reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.is-reveal-pending {
     opacity: 0;
     transform: translateY(14px);
+  }
+
+  .reveal.is-reveal-armed {
     transition:
       opacity 600ms ease,
       transform 600ms ease;

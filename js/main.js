@@ -8,7 +8,11 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-if (revealItems.length) {
+if (
+  revealItems.length &&
+  "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -16,6 +20,7 @@ if (revealItems.length) {
           return;
         }
 
+        entry.target.classList.remove("is-reveal-pending");
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
@@ -27,7 +32,16 @@ if (revealItems.length) {
   );
 
   revealItems.forEach((item) => {
+    if (item.getBoundingClientRect().top <= window.innerHeight * 0.9) {
+      item.classList.add("is-visible");
+      return;
+    }
+
+    item.classList.add("is-reveal-pending");
     revealObserver.observe(item);
+    window.requestAnimationFrame(() => {
+      item.classList.add("is-reveal-armed");
+    });
   });
 }
 
