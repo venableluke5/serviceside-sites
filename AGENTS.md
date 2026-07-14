@@ -1,71 +1,61 @@
-# ServiceSide Sites Instructions
+# ServiceSide Sites Project Instructions
 
-Use this template for static ServiceSide Sites projects.
+## Project goal
 
-## Stack
+Maintain and improve the ServiceSide Sites marketing website.
 
-- HTML
-- Tailwind CSS v4 standalone CLI
-- Vanilla JavaScript
-- No React, Vite, npm, Bootstrap, jQuery, or external UI kits unless explicitly requested
+## Working rules
 
-## File Structure
+- Read BRIEF.md before proposing or making changes.
+- Preserve working functionality and approved content.
+- Prefer focused improvements over complete redesigns.
+- Do not invent business facts, reviews, results, prices, or credentials.
+- Do not make unrelated changes.
+- Do not push directly to main.
+- Do not publish changes unless explicitly instructed.
+- Use existing project conventions unless there is a strong reason to change them.
+- Keep the website lightweight and easy to maintain.
 
-- `index.html` for the homepage and primary content
-- `css/input.css` for Tailwind directives and project styles
-- `css/styles.css` for generated Tailwind output
-- `js/` for small vanilla JS behavior only
-- `images/` for client photos and site assets
-- `docs/` for brief, copy, and design direction notes
+## Design rules
 
-## Commands
+- Use the existing brand palette.
+- Keep the design professional, local, and practical.
+- Avoid generic startup-style design.
+- Avoid excessive pill-shaped elements.
+- Avoid turning every section into a card grid.
+- Use clear hierarchy and strong section rhythm.
+- Keep text widths readable.
+- Make calls to action obvious without repeating them excessively.
+- Preserve the personal, approachable nature of the business.
 
-Build during development:
+## Responsive requirements
 
-```powershell
-tailwindcss -i ./css/input.css -o ./css/styles.css --watch
-```
+Verify the website at approximately:
 
-Build for production:
+- 1440px desktop
+- 1024px laptop/tablet
+- 768px tablet
+- 390px mobile
 
-```powershell
-tailwindcss -i ./css/input.css -o ./css/styles.css --minify
-```
+Check for:
 
-Local preview:
+- Horizontal overflow
+- Awkward text wrapping
+- Oversized sections
+- Tiny buttons
+- Broken navigation
+- Poor image cropping
+- Excessive empty space
 
-```powershell
-python -m http.server 8000
-```
+## Completion requirements
 
-## Design Rules
+Before considering visual work complete:
 
-- Make the site feel like a real local business, not a generic SaaS landing page.
-- Keep layouts clean, direct, and easy to scan on mobile first.
-- Use strong service-specific messaging, clear contact actions, and obvious trust cues.
-- Favor simple sections: hero, services, about, service area, testimonials or proof only when real, and contact.
-- Keep interactions lightweight and fast.
-
-## Content Rules
-
-- Do not invent claims like licensed, insured, years in business, 24/7, emergency service, family-owned, reviews, awards, guarantees, warranties, financing, or certifications.
-- Use placeholders whenever facts are missing.
-- Replace placeholder business names, phone numbers, service lists, and service areas before delivery.
-- Only include real testimonials, photos, and proof if they were provided.
-
-## Mobile-First Rules
-
-- Design for small screens first, then enhance for larger screens.
-- Keep typography readable, tap targets large, and spacing comfortable.
-- Avoid layouts that depend on hover, dense columns, or tiny text.
-- Check that key actions like call, quote, and directions stay easy to find.
-
-## Final QA
-
-- Confirm the site works on mobile and desktop widths.
-- Confirm all links, phone numbers, and forms are correct.
-- Confirm no fake claims were added.
-- Confirm `css/styles.css` is current.
-- Confirm copy matches the client brief and design direction.
-
-
+1. Run the website locally.
+2. Open it in a rendered browser.
+3. Inspect desktop and mobile layouts.
+4. Test navigation, buttons, links, and forms.
+5. Check the browser console for errors.
+6. Capture desktop and mobile screenshots.
+7. Review the Git diff.
+8. Report anything that could not be verified.
