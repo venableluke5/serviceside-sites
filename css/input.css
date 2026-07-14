@@ -50,6 +50,11 @@
     color: #20343a;
   }
 
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 3px solid #2f7e89;
+    outline-offset: 3px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -104,7 +109,6 @@
   .button-primary:focus-visible {
     transform: translateY(-1px);
     box-shadow: var(--shadow-lift);
-    outline: none;
   }
 
   .button-primary:disabled {
@@ -126,7 +130,6 @@
     border-color: rgba(47, 126, 137, 0.45);
     color: #2f7e89;
     transform: translateY(-1px);
-    outline: none;
   }
 
   .button-light {
@@ -139,7 +142,6 @@
   .button-light:focus-visible {
     transform: translateY(-1px);
     box-shadow: 0 22px 46px rgba(17, 27, 30, 0.3);
-    outline: none;
   }
 
   .pill {
