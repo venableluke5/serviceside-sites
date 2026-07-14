@@ -249,6 +249,257 @@
     box-shadow: 0 12px 30px rgba(32, 52, 58, 0.06);
   }
 
+  .service-list {
+    border-block: 1px solid #dbe5e6;
+  }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+
+  .service-item + .service-item {
+    border-top: 1px solid #dbe5e6;
+  }
+
+  .service-number {
+    padding-top: 0.1rem;
+    color: #2f7e89;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .service-label,
+  .process-label,
+  .pricing-name {
+    color: #2f7e89;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .audience-layout {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .audience-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-block: 1px solid #dbe5e6;
+  }
+
+  .audience-list li {
+    position: relative;
+    padding: 0.9rem 0.5rem 0.9rem 1.25rem;
+    border-bottom: 1px solid #e6eded;
+    color: #20343a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .audience-list li::before {
+    content: "";
+    position: absolute;
+    top: 1.45rem;
+    left: 0.1rem;
+    width: 0.55rem;
+    height: 2px;
+    background: #2f7e89;
+  }
+
+  .audience-list li:last-child {
+    border-bottom: 0;
+  }
+
+  .process-track {
+    display: grid;
+    gap: 0;
+  }
+
+  .process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .process-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2.75rem;
+    bottom: 0.25rem;
+    left: 1.22rem;
+    width: 1px;
+    background: #cbdadc;
+  }
+
+  .process-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .process-marker {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 1px solid rgba(47, 126, 137, 0.3);
+    border-radius: 50%;
+    background: #ffffff;
+    color: #2f7e89;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dbe5e6;
+    border-radius: 1.25rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(32, 52, 58, 0.06);
+  }
+
+  .pricing-card-featured {
+    border-color: rgba(47, 126, 137, 0.4);
+    background: linear-gradient(145deg, #ffffff, #f4f9f9);
+    box-shadow: 0 18px 40px rgba(32, 52, 58, 0.1);
+  }
+
+  .pricing-card-header {
+    padding-bottom: 1.15rem;
+    border-bottom: 1px solid #dbe5e6;
+  }
+
+  .pricing-price {
+    margin-top: 0.6rem;
+    color: #20343a;
+    font-size: clamp(1.65rem, 3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .pricing-description {
+    min-height: 6rem;
+    padding-block: 1.15rem;
+    color: #667579;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .pricing-features {
+    display: grid;
+    gap: 0.7rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid #dbe5e6;
+    color: #667579;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .pricing-features li {
+    display: grid;
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .pricing-features li::before {
+    content: "✓";
+    color: #2f7e89;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  @media (min-width: 48rem) {
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-item {
+      padding: 1.75rem;
+    }
+
+    .service-item + .service-item {
+      border-top: 0;
+    }
+
+    .service-item:nth-child(even) {
+      border-left: 1px solid #dbe5e6;
+    }
+
+    .service-item:nth-child(n + 3) {
+      border-top: 1px solid #dbe5e6;
+    }
+
+    .audience-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .audience-list li:nth-last-child(-n + 3) {
+      border-bottom: 0;
+    }
+
+    .pricing-description {
+      min-height: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .audience-layout {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: end;
+      gap: 4rem;
+    }
+
+    .process-track {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      border-top: 1px solid #cbdadc;
+      padding-top: 1.75rem;
+    }
+
+    .process-step {
+      display: block;
+      padding: 0;
+    }
+
+    .process-step:not(:last-child)::after {
+      display: none;
+    }
+
+    .process-marker {
+      margin-top: -3.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .pricing-description {
+      min-height: 7.75rem;
+    }
+  }
+
   .button-primary,
   .button-secondary,
   .button-light {
