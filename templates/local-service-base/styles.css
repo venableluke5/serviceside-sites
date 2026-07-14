@@ -1,0 +1,879 @@
+/* Theme Tokens: update these first to create a new client look quickly. */
+:root {
+  --color-text: #1f2d2b;
+  --color-heading: #182220;
+  --color-muted: #5c6965;
+  --color-accent: #b45b34;
+  --color-accent-strong: #934320;
+  --color-line: #d7d2c7;
+  --color-surface: #fffdf8;
+  --color-surface-alt: #f5efe4;
+  --color-surface-soft: #efe8dc;
+  --color-dark: #25353d;
+  --color-dark-soft: #31454f;
+  --color-white: #ffffff;
+
+  --font-body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+  --space-8: 5rem;
+
+  --radius-sm: 0.9rem;
+  --radius-md: 1.35rem;
+  --radius-lg: 1.9rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 20px 48px rgba(27, 39, 38, 0.08);
+  --shadow-soft: 0 10px 24px rgba(27, 39, 38, 0.05);
+  --shadow-strong: 0 24px 60px rgba(18, 29, 28, 0.16);
+
+  --section-bg-hero:
+    radial-gradient(circle at top right, rgba(180, 91, 52, 0.12), transparent 24%),
+    linear-gradient(180deg, #f7f2e9 0%, #f2ebdf 100%);
+  --section-bg-base: #fffdf8;
+  --section-bg-soft: linear-gradient(180deg, rgba(245, 239, 228, 0.76) 0%, rgba(255, 253, 248, 0.98) 100%);
+  --section-bg-sand: #f4ede2;
+  --section-bg-dark: linear-gradient(135deg, #25353d 0%, #192328 100%);
+  --section-bg-contact: linear-gradient(135deg, #2a3a42 0%, #1b252b 100%);
+
+  --container-width: 1160px;
+  --header-height: 76px;
+}
+
+/* Base Reset: keep this lightweight and easy to edit. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--section-bg-base);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+p,
+li,
+blockquote {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(180, 91, 52, 0.18);
+  color: var(--color-heading);
+}
+
+/* Layout Helpers: reuse these before adding new one-off wrappers. */
+.container {
+  width: min(var(--container-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.content-section,
+.hero-section {
+  padding: var(--space-7) 0;
+}
+
+.section-tone-hero {
+  background: var(--section-bg-hero);
+}
+
+.section-tone-base {
+  background: var(--section-bg-base);
+}
+
+.section-tone-soft {
+  background: var(--section-bg-soft);
+}
+
+.section-tone-surface {
+  background: var(--color-surface);
+}
+
+.section-tone-sand {
+  background: var(--section-bg-sand);
+}
+
+.section-tone-dark {
+  background: var(--section-bg-dark);
+}
+
+.section-tone-contact {
+  background: var(--section-bg-contact);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-heading);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Header + Navigation: edit nav labels and CTA here for each client. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid rgba(24, 34, 32, 0.08);
+  background: rgba(255, 253, 248, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.header-shell,
+.footer-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.header-shell {
+  min-height: var(--header-height);
+}
+
+.brand-mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-decoration: none;
+}
+
+.brand-name {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.brand-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.menu-toggle {
+  margin-left: auto;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-soft);
+  color: var(--color-heading);
+}
+
+.site-nav {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: calc(100% + 0.5rem);
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.site-nav.is-open {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.site-nav a,
+.phone-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.phone-link {
+  color: var(--color-muted);
+}
+
+/* Button System: keep these generic so they can be reused across sections. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.95rem 1.3rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button-solid {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.button-solid:hover,
+.button-solid:focus-visible {
+  background: var(--color-accent-strong);
+}
+
+.button-outline {
+  border-color: rgba(31, 45, 43, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--color-heading);
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  border-color: rgba(180, 91, 52, 0.4);
+}
+
+/* Section Heading Patterns: reuse these across sections before inventing new headings. */
+.section-heading {
+  max-width: 44rem;
+}
+
+.compact-heading {
+  max-width: 30rem;
+}
+
+.section-label,
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.light-label {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section-heading h2,
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 7vw, 4.8rem);
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.section-heading p,
+.lead,
+.hero-panel p,
+.value-card p,
+.gallery-copy p,
+.area-note,
+.process-card p,
+.faq-answer p,
+.footer-copy,
+.review-card p {
+  color: var(--color-muted);
+}
+
+.on-dark h2,
+.on-dark p,
+.on-dark .section-label,
+.section-tone-dark h2,
+.section-tone-dark p,
+.section-tone-dark .section-label {
+  color: var(--color-white);
+}
+
+.on-dark .section-heading p,
+.section-tone-dark .review-card footer {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Hero Section: this is the first section most clients will heavily customize. */
+.hero-grid,
+.split-layout,
+.contact-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.hero-copy {
+  max-width: 42rem;
+}
+
+.lead {
+  margin-top: var(--space-3);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.hero-points {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-points li,
+.mini-card,
+.service-card,
+.value-card,
+.gallery-card,
+.area-panel,
+.process-card,
+.faq-item,
+.form-shell,
+.hero-panel,
+.review-card {
+  border: 1px solid rgba(24, 34, 32, 0.08);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-points li,
+.mini-card,
+.service-card,
+.value-card,
+.gallery-copy,
+.area-panel,
+.process-card,
+.faq-item,
+.hero-panel,
+.review-card {
+  padding: var(--space-4);
+}
+
+.hero-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98) 0%, rgba(243, 234, 218, 0.98) 100%);
+  box-shadow: var(--shadow-strong);
+}
+
+.hero-panel h2 {
+  margin-top: var(--space-2);
+  font-size: 1.9rem;
+}
+
+.detail-stack {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.detail-stack dt,
+.contact-details span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.detail-stack dd,
+.contact-details a,
+.contact-details p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.mini-card-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mini-card strong,
+.service-card h3,
+.value-card h3,
+.gallery-copy h3,
+.process-card h3 {
+  display: block;
+  color: var(--color-heading);
+  font-size: 1.35rem;
+}
+
+.mini-card span,
+.card-tag,
+.review-card footer,
+.step-number {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Trust Bar: easy section to remove if the client does not need it. */
+.trust-bar {
+  border-top: 1px solid rgba(24, 34, 32, 0.06);
+  border-bottom: 1px solid rgba(24, 34, 32, 0.06);
+}
+
+.trust-bar-inner {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.trust-bar-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.trust-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-items li,
+.area-list span {
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(24, 34, 32, 0.1);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Cards + Grids: services, gallery, reviews, and process share this rhythm. */
+.services-grid,
+.gallery-grid,
+.reviews-grid,
+.process-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.service-card a {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-accent-strong);
+}
+
+.card-tag {
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.value-stack,
+.faq-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  padding: var(--space-4);
+  border-bottom: 1px solid rgba(24, 34, 32, 0.08);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background:
+    linear-gradient(135deg, rgba(180, 91, 52, 0.12), rgba(37, 53, 61, 0.08)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45) 14px,
+      rgba(255, 255, 255, 0.18) 14px,
+      rgba(255, 255, 255, 0.18) 28px
+    );
+  color: var(--color-heading);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gallery-card {
+  overflow: hidden;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.review-card p {
+  color: var(--color-white);
+}
+
+.review-card footer {
+  margin-top: var(--space-3);
+}
+
+.area-panel {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.area-note {
+  margin-top: var(--space-4);
+}
+
+.process-grid {
+  list-style: none;
+  padding: 0;
+}
+
+.step-number {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+}
+
+/* FAQ: the JS toggles the hidden answer state and plus/minus icon. */
+.faq-layout {
+  align-items: start;
+}
+
+.faq-question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--color-heading);
+  text-align: left;
+  font-weight: 700;
+}
+
+.faq-icon {
+  display: inline-flex;
+  width: 1.75rem;
+  height: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  color: var(--color-heading);
+  font-size: 1.1rem;
+}
+
+.faq-answer {
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+/* Contact Section: keep the form fields simple and easy to restyle per client. */
+.contact-grid {
+  align-items: start;
+}
+
+.contact-details {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.contact-details a,
+.contact-details p {
+  color: var(--color-white);
+}
+
+.form-shell {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-strong);
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.form-row {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(24, 34, 32, 0.14);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.field textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.faq-question:focus-visible,
+.menu-toggle:focus-visible,
+.button:focus-visible {
+  outline: 2px solid rgba(180, 91, 52, 0.45);
+  outline-offset: 3px;
+}
+
+/* Footer + Mobile CTA: the call bar stays mobile-only by default. */
+.site-footer {
+  border-top: 1px solid rgba(24, 34, 32, 0.08);
+  background: #f7f1e7;
+}
+
+.footer-shell {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-5) 0 calc(var(--space-7) + 1rem);
+}
+
+.footer-brand {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-meta a {
+  text-decoration: none;
+}
+
+.mobile-call-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-strong);
+  text-decoration: none;
+}
+
+.mobile-call-button strong {
+  font-size: 1rem;
+}
+
+body {
+  padding-bottom: 5.5rem;
+}
+
+/* Responsive Layout: add client-specific desktop tweaks here before creating new breakpoints. */
+@media (min-width: 720px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .mobile-call-button {
+    display: none;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-bar-inner {
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .services-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid,
+  .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-grid,
+  .split-layout,
+  .contact-grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  }
+
+  .footer-shell {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-meta {
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 960px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .header-shell {
+    gap: var(--space-5);
+  }
+
+  .site-nav {
+    margin-left: auto;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-section,
+  .content-section {
+    padding: var(--space-8) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
